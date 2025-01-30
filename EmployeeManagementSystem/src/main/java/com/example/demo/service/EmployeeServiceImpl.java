@@ -38,5 +38,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return "Employee Deleted Successfully...!!!!";
 	}
 
+	@Override
+    public void update(int empId, Employee employee) {
+        log.info("Updating employee with Id: {}", empId);
+        Employee existingEmployee = employeeRepository.findById(empId).orElseThrow(() -> new RuntimeException("Employee not found"));
+        existingEmployee.setName(employee.getName());
+        existingEmployee.setDepartment(employee.getDepartment());
+        existingEmployee.setSalary(employee.getSalary());
+        employeeRepository.save(existingEmployee);
+    }
+
 
 }
