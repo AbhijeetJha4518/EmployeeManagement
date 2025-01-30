@@ -7,5 +7,5 @@ public interface EmployeeService {
     void save(Employee employee);
     List<Employee> getAll();
     
-    
+    public abstract String delete(int empId);
 }
