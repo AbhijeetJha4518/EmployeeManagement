@@ -8,4 +8,6 @@ public interface EmployeeService {
     List<Employee> getAll();
     
     public abstract String delete(int empId);
+        void update(int empId, Employee employee);
+
 }
